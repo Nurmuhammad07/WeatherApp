@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+body
+{
+    background-image: url(https://nordicapis.com/wp-content/uploads/How-to-Build-an-API-Driven-Weather-App.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
+}
+
+.app_wrap
+{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    height: 100vh;
+    background-image: linear-gradient(to bottom, rgba(101, 112, 165, 0.3), rgba(82, 113, 169, 0.6));
+}
+
+header
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 15px 15px;
+}
+
+header input
+{
+    width: 100%;
+    max-width: 300px;
+    padding: 10px 20px;
+    border: none;
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 22px;
+    border-bottom: 3.2px solid rgba(219, 161, 25, 0.4);
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    transition: 0.2s ease;
+}
+
+header input:focus
+{
+    transition: 0.2s ease;
+    border-bottom: 3.2px solid rgba(219, 161, 25, 0.8);
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+header input:placeholder-shown
+{
+    font-weight: 500;
+}
+
+main
+{
+    margin-top: 20%;
+    padding: 25px 25px 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.location .city
+{
+    color: #fff;
+    font-size: 32px;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.location .date
+{
+    color: #fff;
+    font-size: 16px;
+}
+
+.main_temp .temp
+{
+    color: #fff;
+    font-size: 100px;
+    font-weight: 900;
+    margin: 30px 0;
+    text-shadow: 2px 7px rgba(0, 0, 0, 0.6);
+    position: relative;
+    z-index: 2;
+    display: flex;
+}
+
+.main_temp .temp::before
+{
+    content: '';
+    position: absolute;
+    background: #f9d5d57e;
+    backdrop-filter: blur(10px);
+    border-radius: 50%;
+    width: 135px;
+    height: 135px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    z-index: -1;
+}
+
+.main_temp .temp::after
+{
+    content: '';
+    position: absolute;
+    background: #f58a8a4c;
+    backdrop-filter: blur(10px);
+    border-radius: 50%;
+    right: 0;
+    bottom: 0;
+    width: 100px;
+    height: 100px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    z-index: -1;
+}
+
+.main_temp span
+{
+    font-weight: 600;
+}
+
+.main_temp .weather
+{
+    color: #fff;
+    font-size: 32px;
+    font-weight: 700;
+    font-style: italic;
+    margin-bottom: 15px;
+    text-shadow: 0px 3px rgba(0, 0, 0, 0.6);
+}
+
+.main_temp .hi_low
+{
+    color: #fff;
+    font-size: 24px;
+    font-weight: 600;
+    text-shadow: 0px 2.5px rgba(0, 0, 0, 0.6);
+}
+
+.main_temp .time
+{
+    color: #fff;
+    font-size: 24px;
+    font-weight: 600;
+    text-shadow: 0px 3px rgba(0, 0, 0, 0.6);
+}
+
+.main_temp .error
+{
+    font-size: 24px;
+    font-weight: 600;
+    text-shadow: 0px 2.3px rgba(0, 0, 0, 0.6);
+    color: #fe4b4b;
+}
+
+@media (max-width:900px)
+{
+
+    .app_wrap
+    {
+        grid-template-columns: 100%;
+    }
+
+    main
+    {
+        height: 0vh;
+    }
+}
